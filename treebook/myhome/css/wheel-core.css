@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 等线;
+    font-size: 20px;
+    color: #575341;
+}
+
+.section-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s
+}
+
+.section-wrap .section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.section-wrap .section .title {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    color: #fff;
+    font-size: 2.4em;
+    text-align: center;
+}
+
+.section-wrap .section-1 {
+    background-color: #f7f7e9
+}
+
+.section-wrap .section-2 {
+    background-color: #f7f7e9
+}
+
+.section-wrap .section-3 {
+    background-color: #f7f7e9
+}
+
+.section-wrap .section-4 {
+    background-color: #f7f7e9
+}
+
+
+.put-section-0 {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+
+.put-section-1 {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+}
+
+.put-section-2 {
+    transform: translateY(-200%);
+    -webkit-transform: translateY(-200%);
+}
+
+.put-section-3 {
+    transform: translateY(-300%);
+    -webkit-transform: translateY(-300%);
+}
+
+.put-section-4 {
+    transform: translateY(-400%);
+    -webkit-transform: translateY(-400%);
+}
+
+
+
+.section-btn {
+    width: 14px;
+    position: fixed;
+    right: 4%;
+    top: 50%;
+}
+
+.section-btn li {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    text-indent: -9999px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin-bottom: 12px;
+    background:#adc2a9;
+    text-align: center;
+    color: #253528;
+    cursor: pointer;
+}
+
+.section-btn li.on {
+    background: #253528
+}
+
+.arrow {
+    opacity: 1;
+    animation: arrow 3s cubic-bezier(0.5, 0, 0.1, 1) infinite;
+    -webkit-animation: arrow 3s cubic-bezier(0.5, 0, 0.1, 1) infinite;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    background-image: url(../images/down.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.in {
+    background-image: url(../images/up.png);
+}
+
+.arrow:hover {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+@keyframes arrow {
+
+    %0,
+    %100 {
+        top: 30px;
+        opacity: 1;
+    }
+
+    50% {
+        top: 60px;
+        opacity: .5
+    }
+}
+
+@-webkit-keyframes arrow {
+    %0,
+    %100 {
+        top: 30px;
+        opacity: 1;
+    }
+
+    50% {
+        top: 60px;
+        opacity: .5;
+    }
+}
+
+
+
+
+
+
+
+#myhomebox{
+            width: 1160px;
+            height: 549px;
+            margin: auto;
+            /*padding-top: 150px;*/
+            /*margin-top: 50px;*/
+            background-color: white;
+            transition: 50%;
+            border-radius: 5px;
+            box-shadow:0px 1px 3px rgba(0,0,0,0);
+            background-color:rgba(233,239,209,1);
+
+        }
+
+
+        #myshelf-pic{
+            float: left;
+        }
+
+        #myshelf-content{
+            float: right;
+            width: 750px;
+            height: 549px;
+            margin-right: 10px;
+           /* background-color: yellow;*/
+            
+        }
+        #myshelf-title{
+            width: 750px;
+            height: 60px;
+            /*background-color: brown;*/
+        }
+        #myshelf-reading{
+            /*background-color: lightpink;*/
+            height: 200px;
+            width: 690px;
+            float: right;
+            border-bottom: 1px solid black;
+
+        }
+        #myshelf-reading-pic{
+            width: 130px;
+            height: 170px;
+            /*background-color: blue;*/
+            align-items: center;
+            float: left;
+            margin-left: 30px;
+            margin-top: 15px;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+        }
+        #myshelf-reading-pic:hover{
+            transform: scale(1.1);
+            -ms-transform:scale(1.1);   /* IE 9 */
+            -moz-transform:scale(1.1);  /* Firefox */
+            -webkit-transform:scale(1.1); /* Safari 和 Chrome */
+            -o-transform:scale(1.1);    /* Opera */
+        }
+        #myshelf-reading-note{
+            width: 270px;
+            height: 200px;
+            /*background-color: green;*/
+            float: right;
+            margin-right: 20px;
+        }
+        #clicktoread{
+            color: #cc0606;
+            cursor: pointer;
+
+        }
+        #clicktoread:hover{
+            text-decoration: underline;
+        }
+
+        #myshelf-reading-book{
+            /*background-color: purple;*/
+            height: 200px;
+            width: 180px;
+            margin-left: 180px;
+            text-align: center;
+            
+        }
+
+
+
+
+
+       /* //////////////////////////////*/
+       #myshelf-toread{
+            /*background-color: lightpink;*/
+            height: 200px;
+            width: 750px;
+        }
+
+
+        #books-toread{
+            width: 600px;
+            height: 200px;
+            /*background-color: brown;*/
+            position: relative;
+            margin-left: 112px;
+            
+        }
+
+        #abook{
+            width: 130px;
+            height: 170px;
+            margin-top: 15px;
+            float: left;
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            /*background-color: red;*/
+            background-size: 100% 100%;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+
+        }
+
+        #abook:hover{
+            transform: scale(1.1);
+            -ms-transform:scale(1.1);   /* IE 9 */
+            -moz-transform:scale(1.1);  /* Firefox */
+            -webkit-transform:scale(1.1); /* Safari 和 Chrome */
+            -o-transform:scale(1.1);    /* Opera */
+
+        }
+
+
+
+
+
+
+
+
+
+        
+        /*//////////////////////////////*/
+        #mylikes-content{
+            width: 660px;
+            height: 549px;
+            /*background-color: pink;*/
+            float: left;
+        }
+        #mylikes-title{
+            width: 660px;
+            height: 60px;
+            /*background-color: brown;*/
+        }
+        #mylikes-box{
+            width: 600px;
+            height: 200px;
+            /*background-color: yellow;*/
+            margin: auto;
+            border-bottom: 1px solid;
+        }
+        #mylikes-people{
+            width: 115px;
+            height: 150px;
+            /*background-color: black;*/
+            margin-left: 20px;
+            margin-top: 30px;
+            float: left;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+        }
+        #mylikes-people:hover{
+            transform: scale(1.05);
+            -ms-transform:scale(1.05);  /* IE 9 */
+            -moz-transform:scale(1.05);     /* Firefox */
+            -webkit-transform:scale(1.05); /* Safari 和 Chrome */
+            -o-transform:scale(1.05);   /* Opera */
+        }
+        #mylikes-pic{
+            float: right;
+            margin-top: 77px;
+
+        }
+
+        #mylikes-review{
+            width: 450px;
+            height: 180px;
+            /*background-color: Aliceblue;*/
+            margin-left: 150px;
+            margin-top: 20px;
+        }
+
+
+
+
+       /* ///////////////////////////////////*/
+       #myhabits-pic{
+            float: right;
+        }
+        #myhabits-title{
+            height:60px;
+            /*background-color: brown;*/
+            
+        }
+        #myhabits-content{
+            width: 690px;
+            height: 545px;
+            /*background-color: yellow;*/
+            float: left;
+        }
+
+        #myhabits-text{
+            width: 350px;
+            height: 200px;
+            /*background-color: pink;*/
+            margin-top: 80px;
+            margin-left: 170px;
+            
+
+
+        }
+        #myhabits-people{
+            width: 310px;
+            height: 120px;
+            margin-top: 50px;
+            /*background-color: red;*/
+            margin-left: 190px;
+            position: relative;
+
+        }
+
+        #apeople{
+            width: 120px;
+            height: 120px;
+            float: left;
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            /*background-color: red;*/
+            background-size: 100% 100%;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+
+        }
+
+        #apeople:hover{
+            transform: scale(1.05);
+            -ms-transform:scale(1.05);  /* IE 9 */
+            -moz-transform:scale(1.05);     /* Firefox */
+            -webkit-transform:scale(1.05); /* Safari 和 Chrome */
+            -o-transform:scale(1.05);   /* Opera */
+            /*z-index:2;*/
+        }

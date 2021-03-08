@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- 	<meta charset="utf-8"> -->
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>书评</title>
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!--All Css Here-->
+    <!-- Bootstrap CSS 布局-->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- Font Awesome CSS icon等-->
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- Modernizr Js 加载动画更流畅 -->
+  <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<style type="text/css">
+	    body{
+	    	text-align: center;
+        background-color: #f7f7e9;
+        font-family: 等线;
+	    }
+
+		#bigpic{
+			width: 100%;
+			height: 800px;
+		}
+        #main{
+       	width: 100%;
+        margin:auto;
+
+       	float: left;
+       }
+		div#topCards{
+	    	float: right;
+	    	width: 330px;
+     /*   margin-right:20px;*/
+
+	    }
+	    div#tags{
+	    	float:right;
+	    	width:320px;
+	    	margin-bottom: :100px;
+        margin-top: 25px;
+	    	border: 3px #DAA520 solid;
+
+	    	border-radius: 20px;
+	    	color: rgba(240,255,255,0.8);
+	    	cursor: default;
+
+	    }
+	    div#tagsInner{
+
+	    	position: relative;
+	    	left: -10px;
+	    	top: -10px;
+	    	width: 300px;
+	    	border: 1px #B8860B solid;
+	    	border-radius: 20px;
+	    	padding: 10px;
+	    	background-color: #FFFAF0;
+	    	
+	    }
+	    div#tagsTitle{
+	    	line-height: 40px;
+	    	padding-top: 20px;
+	    }
+	    div.topTitle{
+	    	width: 100%;
+	    	font-size: 22px;
+	    	font-weight: 600;
+	    	letter-spacing: 0.2em;
+	    }
+	    div#tagsLine{
+	    	position: relative;
+	    	top: -5px;
+	    	width: 80px;
+	    	height: 5px;
+	    	margin: 0 auto 15px;
+	    	background-color: #333333
+	    }
+	    div#tagList{
+	    	width: 100%;
+	    	height: 360px;
+	    	overflow: hidden;
+	    }
+	    div.aTag{
+	    	position: relative;
+	    	text-align: left;
+	    	line-height: 35px;
+	    	cursor: pointer;
+	    	color:#333333;
+	    	transition: left 0.8s;
+	    }
+	    div#chgTags{
+	    	width: 150px;
+	    	line-height: 30px;
+	    	margin: 3px auto;
+	    	font-size: 16px;
+	    	background-color::#204969;
+            color:#204969;
+            font-weight:500;
+            border-radius: 10px;
+            border: 2px #2facb1 solid;
+            transition: all 0.2s;
+            cursor: pointer;
+	    }
+
+      
+      .wholeview{
+			width: 830px;
+			float: left;
+
+			margin-left: 90px;
+
+	
+		}
+		.cards{
+			float: left;
+			width: 250px;
+			height: 300px;
+			position: relative;
+			top: 20px;
+			left: 20px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			border-radius: 20px;
+			/*margin: 10px ;*/
+      transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+
+		}
+		.boxone{
+			  position: absolute;
+              width: 250px;
+              height:300px;
+   /*           background-color: red;*/
+              z-index: 2;
+              transition: all 2s;
+              backface-visibility: hidden;
+              border-radius: 20px;
+           
+		}
+		.boxtwo{
+			position: absolute;
+			width: 250px;
+			height: 300px;
+			background-color: green;
+			transform: rotateY(180deg);
+			border-radius: 20px;
+		}
+		.cards:hover .boxtwo{
+            transform: rotateY(0deg);
+
+		}
+      .cards:hover .boxone{
+         transform: rotateY(180deg);
+       }
+
+	
+        .heart,.star{
+        float: left;
+        width: 100px;
+        height: 40px;
+   
+        bottom: 10px;
+        
+	   }
+       .heart{
+       	left: 10px;
+
+       }
+       .star{
+       	right:10px;
+       	
+       }
+        #buttons{
+       	z-index: 1;
+       	position: fixed;
+       	width: 150px;
+       	right: 50px;
+       	bottom: 30px;
+       	display: block;
+        
+
+
+       }
+       
+       #write, #bookmark{
+       	float: left;
+       	width: 70px;
+       	height: 70px;
+        margin-right: 5px;
+        transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+       }
+    #write:hover{
+ /*      	box-shadow: 0px 1rem 2rem 0px rgba(48,55,66,0.15);*/
+       	transform: translate(0,-10px);
+       transition-delay: 0s !important;
+
+       }
+   #bookmark:hover{
+ /*      	box-shadow: 0px 1rem 2rem 0px rgba(48,55,66,0.15);*/
+       	transform: translate(0,-10px);
+       transition-delay: 0s !important;
+
+       }
+       .profile:hover{
+        transform: translate(0,-5px);
+       transition-delay: 0s !important;
+
+       }
+       #searchbox{
+        width: 700px;
+        top: 30px;
+        margin-left: 140px;
+   /*     margin: 30px auto;*/
+        font-family: 等线;
+        font-size: 14px;
+        border-radius: 30px;
+    }
+
+     input#mainsearch{
+        width: 600px;
+    /*    border: 1px solid #e2e2e2;*/
+        height: 50px;
+        float: left;
+        background-image: url('images/searchpic.png');
+        background-repeat: no-repeat;
+        background-size: 35px;
+        background-position:5px center;
+        padding:0 0 0 40px;
+        border-radius: 30px;
+    }
+    #search{
+        width: 78px;
+        height: 52px;
+        float: right;
+        background-image: url('images/searchbuttpic.png');
+        background-size: 60px 60px;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        text-align: center;
+        transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            cursor: pointer;
+    }
+   #search:hover{
+ /*      	box-shadow: 0px 1rem 2rem 0px rgba(48,55,66,0.15);*/
+       	transform: translate(0,-5px);
+       transition-delay: 0s !important;
+
+       }
+            .black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 350%; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.60; 
+            filter: alpha(opacity=88);
+            
+        } 
+        .white_content { 
+            display: none; 
+            position: absolute; 
+            top: 25%; 
+            left: 20%; 
+            width: 55%; 
+            height: 63%; 
+            padding: 20px; 
+            border: 5px solid #575341; 
+            background-color:#e3dfd4; 
+            z-index:1002; 
+            overflow: auto; 
+            border-radius: 20px;
+           /* display: block;*/
+            transition: all 0.6s;
+            
+
+        } 
+        input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/*div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+*/
+.close{
+  width: 15px;
+  height: 15px;
+  float: right;
+}
+.profile{
+  width:50px;
+  float:left;
+
+	
+}
+</style>
+</head>
+<body >
+
+
+<div class="wrapper">
+    <!--Header Area Start-->
+    <header>
+        <div class="header-container" style="position: fixed;width: 100%;background-color: rgba(247,247,233,0.85);">
+            <div class="header-area header-sticky pt-30 pb-30" >
+                    <div class="container">
+                        <div class="row">
+                            <!--Header Logo Start-->
+                            <div class="col-lg-3 col-md-3">
+                                <div class="logo-area">
+                                    <a href="../index.html" >
+                                        <img src="../images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Header Logo End-->
+                            <!--Header Menu And Mini Cart Start-->
+                            <div class="col-lg-9 col-md-9 text-lg-right">
+                                <!--Main Menu Area Start-->
+                                <div class="header-menu">
+                                    <nav>
+                                        <ul class="main-menu">
+                                          <li><a href="../trade/index.html" style="text-decoration: none;color: #3d3a2d">交易森林</a>
+                                                <!--Dropdown Menu Start-->
+                                                <ul class="dropdown">
+                                                    <li><a href="../trade/index.html">随便逛逛</a></li>
+                                                    <li><a href="../trade/single-product.html">最近发布</a></li>
+                                                    <li><a href="../trade/shopping car.html">我的购物车</a></li>
+                                                   
+                                                </ul>
+                                                <!--Dropdown Menu End-->
+                                            </li>
+                                          
+                                            <li><a href="../myhome/index.html"style="text-decoration: none;color: #3d3a2d">自家庭院</a>
+                                                <!--Dropdown Menu Start-->
+                                                <ul class="dropdown">
+                                                    <li><a href="../myhome/index.html">继续阅读</a></li>
+                                                    <li><a href="../myhome/index.html">我的书架</a></li>
+                                                    <li><a href="../myhome/index.html">我的收藏</a></li>
+                                                    <li><a href="../myhome/index.html">我的习惯</a></li>
+                                               
+                                                </ul>
+                                                <!--Dropdown Menu End-->
+                                            </li>
+                                            
+                                           
+                                            <li><a href="review.html"style="text-decoration: none;color: #3d3a2d">书评森林</a>
+                                            <ul class="dropdown">
+                                                    <li><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">写书评</a></li>
+                                                    <li><a href="#maodian">随机书评</a></li>
+                                                    
+                                               
+                                                </ul></li>
+                                       
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!--Main Menu Area End-->
+                                <!--Header Option Start--> 
+                                <div class="header-option">
+                                    <div class="mini-cart-search">
+                                        <div class="mini-cart">
+                                            <a href="../trade/shopping car.html">
+                                                <span class="cart-icon">
+                                                   <span class="cart-quantity">2</span>
+                                                </span>
+                                                <span class="cart-title" >购物车 <br><strong>9颗种子</strong></span> 
+                                            </a>
+                                        </div>
+                                        <div class="header-search">
+                                            <div class="search-box">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="currency">
+                                            <div class="currency-box">
+                                                <a href="../login/index.html"><i class="fa fa-th"></i></a>
+                                                <div class="currency-dropdown" style="">
+                                                    <ul class="menu-top-menu">
+                                                        <li><a href="../login/index.html">我的账号</a></li>
+                                                        <li><a href="../login/index.html">私信</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Header Option End--> 
+                            </div>
+                            <!--Header Menu And Mini Cart End-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12"> 
+                                <!--Mobile Menu Area Start-->
+                                <div class="mobile-menu d-lg-none"></div>
+                                <!--Mobile Menu Area End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </header>
+    <!--Header Area End-->
+
+
+
+
+
+
+
+
+
+<div id="bigpic"><img src="images/bigpic.png" style="width: 1200px ;height:600px;" /></div>
+<br/>
+
+<div id="searchbox" style="float: left;">
+        <input id="mainsearch" type="text" name="search" placeholder="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp请输入关键字">
+        <div id="search"></div> 
+</div>	
+<div id="light" class="white_content">
+        
+              <div class="close"><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img src="images/closepic.png" width="15px;" height="15px;"></a></div>
+              <div> <form action="#">
+                 <h2>小书卡片</h2>
+                 <label for="bookname">书名</label>
+                <input type="text" id="bookname" name="bookname" placeholder="BooK‘s name ">
+
+               <label for="writer">作者</label>
+               <input type="text" id="writer" name="writer" placeholder="Writer">
+
+
+               <label for="comment">一句肺腑之言</label>
+               <input type="text" id="comment" name="comment" placeholder="A sentence from your heart( at most 92 characters)" >
+
+                <input type="submit" value="扔出小卡片">
+               </form>
+            </div>     
+    </div> 
+        <div id="fade" class="black_overlay"></div> 
+<div id="main">
+
+<div id="buttons">
+	<div id="write"> <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><img src="images/writepic.png" width="70px" height="70px"/></a></div>
+	<div id="bookmark"><img src="images/bookmarkpic.png" width="70px" height="70px"></div>
+</div>
+
+<div id="topCards">
+	<div id="tags">
+		<div id="tagsInner">
+			<div class="topTitle" id="tagsTitle" style="color: #333333">TAGS</div>
+			<div id="tagsLine"></div>
+			<div id="tagsList">
+				<div class="atag" id="one" style="left: 0px; font-size: 10px;padding-left: 40px;color: #333333">#村上春树</div>
+				<div class="atag" id="two" style="left: 0px; font-size: 20px;padding-left: -100px;color: #333333 ">#挪威的森林</div>
+				<div class="atag" id="three" style="left: 0px; font-size: 30px;padding-left: 30px;color: #333333">#活着</div>
+				<div class="atag" id="four" style="left: 0px; font-size: 10px;padding-left: 10px;color: #333333">#后来的我们</div>
+				<div class="atag" id="five"style="left: 0px; font-size: 30px;padding-left: 80px;color: #333333">#致橡树</div>
+				<div class="atag" id="six" style="left: 0px; font-size: 20px;padding-left: 10px;color: #333333">#追风筝的人</div>
+				<div class="atag" id="seven"style="left: 11px; font-size: 15px;padding-left: -10px;color: #333333">#寻找圣光的人</div>
+				<div class="atag" id="eight" style="left: 0px; font-size: 20px;padding-left: 20px;color: #333333">#蛙</div>
+				<div class="atag" id="nine" style="left: 0px; font-size: 30px;padding-left: 30px;color: #333333">#斗罗大陆</div>
+				<div class="atag" id="ten" style="left: 0px; font-size: 10px;padding-left: 40px;color: #333333">#唐家三少</div>
+			</div>
+			<div id="chgTags" onclick="changetags();" >换&nbsp;一&nbsp;批</div>
+		</div>
+	</div>
+</div>
+
+<div class="wholeview" >
+	<div class="cards"  >
+    		<div class="boxone"style=" background-size: 250px 300px;background-image: url('images/1.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center;  background-color: #f9e8ba;"><h2 style="height: 30px; margin-top: 10px;">《寂静回声》</h2><p style="height:180px;width: 100%;">“人越成长，可以失去的东西就越少，而留存下来的，就越珍贵。”很有共鸣感的一句话，如溪水潺潺浸润人心。岁月长河中，难免会有些无法挽回的遗憾，每每想起便觉得丝丝阵痛，无法释怀。</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profileone.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/4.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center; background-color: #c0cfb2;"><h2 style="height: 30px; margin-top: 10px;">《偷影子的人》</h2><p style="height:180px;width: 100%;">真正的高手，总是在平淡的题材中见真章，因为人人都有的经历，人人都体会过的情感，并不是那么好表达，如果不能让读者感同身受，就等同于失败。而马克?李维，就是这么一个大师级的人物。</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profiletwo.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/7.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center; background-color: #8ba889;"><h2 style="height: 70px; margin-top: 10px;">《此生江湖聚散，你要敢爱敢当》</h2><p style="height: 150px;width: 100%;">“爱过的人，终究是赚了。即使曲终人散，也值得流连再三。我会陪你走到渡口，看你勇敢泅渡，然后挥手作别，江湖聚散。愿你有爱，有敢，有胆。”相信我也可以这样敢爱敢当。</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profilethree.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/2.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center;  background-color: #b1bc9e;"><h2 style="height: 30px; margin-top: 10px;">《围城》</h2><p style="height: 180px;width: 100%;">男人的西服、礼帽，女人的旗袍、高跟鞋，统统被夺了去，他们赤裸裸的，所有的真实和不堪全摊开来，尤其是男人的怯懦和女人的刻薄。看着门里门外的人进进出，但往往自己不小心就这样坐在门里看了一辈子。。</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profilefour.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" id="maodian" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/5.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center; background-color: #c7d2d8;"><h2 style="height: 30px; margin-top: 10px;">《月亮和六便士》</h2><p style="height: 180px;width: 100%;">抬头是明月，低首是六便士，弯腰拾起那银币的人，不会理解那颗向往月亮的灵魂；也有人终日仰慕月亮，对脚下的六便士视而不见。喏，当你选择自己想要的生活，月亮不就是六便士嘛，能毫无悔恨 毫不妥协的活着就已经很好啦。</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profilefive.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/8.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center;  background-color: #efe9d1;"><h2 style="height: 30px; margin-top: 10px;">《活着》</h2><p style="height: 180px;width: 100%;">难得的温情最终都被一次次的死亡撕碎。余华可能想表达的是活着真好，活着就有希望，因为坚强，痛苦的活着也许不再是一个悲剧，而是一种修行。但他又仿佛只告诉了我，人只能这么卑微的活着，却不能说服我为什么只能这么活着。</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profilesix.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/3.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center;background-color: #cbc4b4;"><h2 style="height: 30px; margin-top: 10px;">《无影灯》</h2><p style="height: 180px;width: 100%;">第一次读渡边淳一的书，不是很喜欢这本书的风格，也不懂什么死亡美学，他让我看到了临死前的那种放纵、那种彻悟，有点荒诞的故事，悲哀又孤寂，却也刷新了一种生死观。 </p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profileseven.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/6.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center;  background-color:  #d2d5bf;"><h2 style="height: 30px; margin-top: 10px;">《追风筝的人》</h2><p style="height: 180px;width: 100%;">"为你，千千万万遍"感动了无数人，但"我们有什么权利指责别人的过去"更引起我的共鸣。谁的生命中没有想挽回的风筝，谁没有令自己悔痛的事，谁能保证心灵永远沐浴在阳光下？</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profileeight.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+    <div class="cards" >
+    		<div class="boxone" style=" background-size: 250px 300px;background-image: url('images/9.jpg ');"></div>
+    		<div class="boxtwo" style="text-align: center;background-color: #f1e1d1;"><h2 style="height: 30px; margin-top: 10px;">《无人生还》</h2><p style="height: 180px;width: 100%;">经典的童谣杀人+孤岛模式，剧本更改了结局，也就没有了"文明在小岛上荒芜，道德的流放地万物萧条，无人生还"。人性的悲哀在最后的剖白中无法抑止，也许每个人心中都有个浮士德，也许很多道貌岸然的人都会犯罪，总之，慎独。 ​​​</p><div class="heart"><img onclick="changeheart(this);" style="width: 40px;height: 40px;"src="images/heartpicone.png"/></div><div  class="profile" ><img src="images/profilenine.jpg"  style="width:40px; height:40px; border-radius:40px;"></div><div class="star"><img onclick="changestar(this);" style="width: 40px;height: 40px;" src="images/starpicone.png"/></div></div>
+    </div>
+</div>
+
+</div>
+
+
+
+		<!--Footer Area Start-->
+		<footer style="margin-top: 1200px;">
+		    <div class="footer-container" style="height: ">
+		        
+		        <!--Footer Middle Area Start-->
+		        <div class="footer-middle-area black-bg">
+		            <div class="container">
+		                <div class="row">
+		                    <div class="col-lg-3 col-md-6">
+		                        <!--Single Footer Widget Start-->
+		                        <div class="single-footer-widget mb-30">
+		                            <div class="footer-logo">
+		                                <a href="index.html"><img src="img/logo/logo-footer.png" alt=""></a>
+		                            </div>
+		                        </div>
+		                        <!--Single Footer Widget End-->
+		                    </div>
+		                    <div class="col-lg-3 col-md-6">
+		                        <!--Single Footer Widget Start-->
+		                        <div class="single-footer-widget mb-30">
+		                            <div class="footer-info">
+		                                <div class="icon">
+		                                    <i class="fa fa-home"></i>
+		                                </div>
+		                                <p>Address : 北京市昌平区沙河镇北京邮电大学沙河校区</p>
+		                            </div>
+		                        </div>
+		                        <!--Single Footer Widget End-->
+		                    </div>
+		                    <div class="col-lg-3 col-md-6">
+		                        <!--Single Footer Widget Start-->
+		                        <div class="single-footer-widget mb-30">
+		                            <div class="footer-info">
+		                                <div class="icon">
+		                                    <i class="fa fa-envelope-open-o"></i>
+		                                </div>
+		                                <p>Email: <br>bupt@163.com</p>
+		                            </div>
+		                        </div>
+		                        <!--Single Footer Widget End-->
+		                    </div>
+		                    <div class="col-lg-3 col-md-6">
+		                        <!--Single Footer Widget Start-->
+		                        <div class="single-footer-widget mb-30">
+		                            <div class="footer-info">
+		                                <div class="icon">
+		                                    <i class="fa fa-mobile"></i>
+		                                </div>
+		                                <p>Phone: <br>000000000</p>
+		                            </div>
+		                        </div>
+		                        <!--Single Footer Widget End-->
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <!--Footer Middle Area End-->
+		        <!--Footer Bottom Area Start-->
+		        <div class="footer-bottom-area black-bg pt-50 pb-50">
+		            <div class="container">
+		                <div class="row">
+		                    <div class="col-md-12">
+                                
+		                        <!--Footer Menu Start-->
+		                        <div class="footer-menu text-center">
+		                            <nav>
+		                                <ul>
+		                                    
+		                                    <li><a href="#">Orders and Returns</a></li>
+		                                    <li><a href="#">About Us</a></li>
+		                                    <li><a href="#">Contact Us</a></li>
+		                                </ul>
+		                            </nav>
+		                        </div>
+		                        <!--Footer Menu End-->
+		                        <!--Footer Copyright Start-->
+		                        <div class="footer-copyright">
+		                            <p>Copyright © <a href="#">TreeBooks</a> All Rights Reserved</p>
+		                        </div>
+		                        <!--Footer Copyright End-->
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <!--Footer Bottom Area End-->
+		    </div>
+		</footer>
+		<!--Footer Area End-->
+
+
+
+<script type="text/javascript">
+    var x=0;
+    function changetags(){
+           x++;
+       
+           var m=document.getElementsByClassName("boxone");
+           // m[1].setAttribute("background-image","url(images/mainpicone.jpg')");
+           //  m[2].setAttribute("background-image","url(images/mainpictwo.jpg')");
+           if (x%2==1) {
+           m[0].style.backgroundImage="url(images/mainpicone.jpg)";
+           m[1].style.backgroundImage="url(images/mainpictwo.jpg)";
+           m[2].style.backgroundImage="url(images/mainpicthree.jpg)";
+           m[3].style.backgroundImage="url(images/mainpicfour.jpg)";
+           m[4].style.backgroundImage="url(images/mainpicfive.jpg)";
+           m[5].style.backgroundImage="url(images/mainpicsix.jpg)";
+           m[6].style.backgroundImage="url(images/mainpicseven.jpg)";
+           m[7].style.backgroundImage="url(images/mainpiceight.jpg)";
+           m[8].style.backgroundImage="url(images/mainpicnine.jpg)";
+    //        $(document).ready(function(e){
+    //     $('#one').html('苑子文');
+    // })
+    //   $(document).ready(function(e){
+    //     $('#divId').html('刘同');
+    // })
+    //    $(document).ready(function(e){
+    //     $('#divId').html('愿有人陪你颠沛流离');
+    // })
+    //     $(document).ready(function(e){
+    //     $('#divId').html('星星上的花');
+    // })
+    //      $(document).ready(function(e){
+    //     $('#divId').html('从你的全世界路过');
+    // })
+    //      $(document).ready(function(e){
+    //       $('#one').html('云边有个小卖部');
+    // })
+    //   $(document).ready(function(e){
+    //     $('#divId').html('乖摸摸头');
+    // })
+    //    $(document).ready(function(e){
+    //     $('#divId').html('发明简史');
+    // })
+    //     $(document).ready(function(e){
+    //     $('#divId').html('中华上下五千年');
+    // })
+    //      $(document).ready(function(e){
+    //     $('#divId').html('明朝那些事儿');
+    // }）
+      document.getElementById("one").innerHTML="#苑子文";
+    document.getElementById("two").innerHTML="#刘同";
+  document.getElementById("three").innerHTML="#星星上的花";
+    document.getElementById("four").innerHTML="#云边有个小卖部";
+       document.getElementById("five").innerHTML="#乖摸摸头";
+    document.getElementById("six").innerHTML="#中华上下五千年";
+  document.getElementById("seven").innerHTML="#发明简史";
+    document.getElementById("eight").innerHTML="#明朝那些事儿";
+      document.getElementById("nine").innerHTML="#活着";
+    document.getElementById("ten ").innerHTML="#愿有人陪你颠沛流离";
+         }
+         else if (x%2==0) {
+           m[0].style.backgroundImage="url(images/1.jpg)";
+           m[1].style.backgroundImage="url(images/4.jpg)";
+           m[2].style.backgroundImage="url(images/7.jpg)";
+           m[3].style.backgroundImage="url(images/2.jpg)";
+           m[4].style.backgroundImage="url(images/5.jpg)";
+           m[5].style.backgroundImage="url(images/8.jpg)";
+           m[6].style.backgroundImage="url(images/3.jpg)";
+           m[7].style.backgroundImage="url(images/6.jpg)";
+           m[8].style.backgroundImage="url(images/9.jpg)";
+    //        $(document).ready(function(e){
+    //     $('#one').html('挪威的森林');
+    // })
+    //   $(document).ready(function(e){
+    //     $('#divId').html('村上春树');
+    // })
+    //    $(document).ready(function(e){
+    //     $('#divId').html('后来的我们');
+    // })
+    //     $(document).ready(function(e){
+    //     $('#divId').html('致橡树');
+    // })
+    //      $(document).ready(function(e){
+    //     $('#divId').html('追风筝的人');
+    // })
+    //      $(document).ready(function(e){
+    //       $('#one').html('寻找圣光的人');
+    // })
+    //   $(document).ready(function(e){
+    //     $('#divId').html('蛙');
+    // })
+    //    $(document).ready(function(e){
+    //     $('#divId').html('斗罗大陆');
+    // })
+    //     $(document).ready(function(e){
+    //     $('#divId').html('活着');
+    // })
+    //      $(document).ready(function(e){
+    //     $('#divId').html('唐家三少');
+    // }）
+    document.getElementById("one").innerHTML="#挪威的森林";
+    document.getElementById("two").innerHTML="#村上春树";
+  document.getElementById("three").innerHTML="#后来的我们";
+    document.getElementById("four").innerHTML="#致橡树";
+       document.getElementById("five").innerHTML="#追风筝的人";
+    document.getElementById("six").innerHTML="#寻找圣光的人";
+  document.getElementById("seven").innerHTML="#蛙";
+    document.getElementById("eight").innerHTML="#斗罗大陆";
+      document.getElementById("nine").innerHTML="#活着";
+    document.getElementById("ten ").innerHTML="#唐家三少";
+         }
+        }
+
+    
+
+	function changeheart(link){
+		var element=link.getAttribute("src");
+		// var dot=link.getElementsByTagName("img")
+		if(element=="images/heartpicone.png")
+         link.setAttribute("src","images/heartpic.png");
+        if(element=="images/heartpic.png")
+         link.setAttribute("src","images/heartpicone.png");
+	}
+		function changestar(link){
+		var element=link.getAttribute("src");
+		// var dot=link.getElementsByTagName("img")
+		if(element=="images/starpicone.png")
+         link.setAttribute("src","images/starpic.png");
+        if(element=="images/starpic.png")
+         link.setAttribute("src","images/starpicone.png");
+	}
+	$(window).scroll(function(event){        //JQ监听滚动条
+　　$('.white_content').css("top", $(window).scrollTop()+100);//设置DIV的top
+});
+   // function onTopClick() {
+
+   //       window.location.hash = “#wholeview”;
+
+   //     }
+
+	</script>
+</body> 
+</html>

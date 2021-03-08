@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+<head>
+<!-- 	<meta charset="utf-8">
+ -->	
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<meta name="renderer" content="webkit">
+	<title>自家庭院</title>
+	<link rel="stylesheet" href="css/wheel-core.css">
+	<!-- Place favicon.ico in the root directory -->
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!--All Css Here-->
+    <!-- Bootstrap CSS 布局-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- Font Awesome CSS icon等-->
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="../style.css">
+	<!-- Modernizr Js 加载动画更流畅 -->
+	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+</head>
+<body>
+	
+
+
+<!-- 我的书柜：在读 -->
+	<section class="section-wrap">
+		<div class="section section-1">
+
+			<div style="height: 130px;width: 10px;"></div>
+
+			<div id="myhomebox">
+				
+
+				<!-- 我的书柜*图片 -->
+
+				<div id="myshelf-pic">
+					<img src="images/myshelf.png">
+				</div>
+				<!-- 我的书柜*图片结束 -->
+
+				<!-- 我的书柜*内容 -->
+
+				<div id="myshelf-content">
+					<div id="myshelf-title">
+						<div style="width: 750px;height: 40px;"></div>
+						<h1 style="text-align: center;font-size: 22px;color: #3d3a2d;font-weight: bold;">我&nbsp的&nbsp书&nbsp架</h1>
+					</div>
+
+					<div style="height: 33px;width: 750px;"></div>
+					<div style="width: 22px;height: 88px;/*background-color: brown;*/float: left;margin-left: 30px;margin-top: 140px;float: left;">
+							<p style="text-align: center;font-size: 22px;color: #3d3a2d;font-weight: bold;">在<br>&nbsp<br>读</p>
+						</div>
+
+
+					<!-- 在读的书一 -->
+					<div id="myshelf-reading">
+						
+
+						<div id="myshelf-reading-pic">
+							<img src="images/11111.png">
+						</div>
+
+						<div id="myshelf-reading-note" style="font-size: 17px;">
+							<div style="height: 35px"></div>
+							<p style="color: #3d3a2d;font-weight: bold;letter-spacing: 0.7px;line-height: 23px;">
+								2019.11.4你的读书笔记</p>
+							<p style="letter-spacing: 0.7px;line-height: 23px;">	设计不是让复杂的东西变简单。“复杂”和“费解”是不同的意思，设计是避免费解，而不是避免复杂。</p>
+						</div>
+						<div id="myshelf-reading-book" style="font-size: 17px;">
+							<div style="height: 35px"></div>
+							<p style="color: #3d3a2d;font-weight: bold;margin-bottom:0.5rem;">《设计心理学》</p>
+							<p style="margin-bottom:0.5rem;">诺曼</p>
+							<p style="margin-bottom:0.5rem;"><span style="color: #469B6E">56人</span>在读</p>
+							<p id="clicktoread" style="margin-bottom:0rem;">继续阅读</p>
+						</div>
+					</div>
+
+					<!-- 在读的书二 -->
+					<div id="myshelf-reading">
+						
+
+						<div id="myshelf-reading-pic">
+							<img src="images/11111.png">
+						</div>
+
+						<div id="myshelf-reading-note" style="font-size: 17px;">
+							<div style="height: 35px"></div>
+							<p style="color: #3d3a2d;font-weight: bold;">
+								2019.11.4你的读书笔记</p>
+							<p style="letter-spacing: 0.7px;line-height: 23px;">设计不是让复杂的东西变简单。“复杂”和“费解”是不同的意思，设计是避免费解，而不是避免复杂。</p>
+						</div>
+						<div id="myshelf-reading-book" style="font-size: 17px;">
+							<div style="height: 35px"></div>
+							<p style="color: #3d3a2d;font-weight: bold;margin-bottom:0.5rem;">《设计心理学》</p>
+							<p style="margin-bottom:0.5rem;">诺曼</p>
+							<p><span style="color: #469B6E;margin-bottom:0.5rem;">56人</span>在读</p>
+							<p id="clicktoread" >继续阅读</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- 我的书柜*内容结束 -->
+			</div>
+		</div>
+
+<!-- 我的书柜：在读结束 -->
+
+
+
+
+
+
+<!-- 我的书柜：积读 -->
+		<div class="section section-2">
+			<div style="height: 130px;width: 10px;"></div>
+			<div id="myhomebox" style="background-color: rgba(199,210,216,0.7);">
+				<!-- 我的书柜*图片 -->
+				<div id="myshelf-pic">
+					<img src="images/toread.png">
+				</div>
+				<!-- 我的书柜*图片结束 -->
+				<!-- 我的书柜*内容 -->
+				<div id="myshelf-content">
+					<div id="myshelf-title">
+						<div style="width: 750px;height: 40px;"></div>
+						<h1 style="text-align: center;font-size: 22px;color: #3d3a2d;font-weight: bold;">我&nbsp的&nbsp书&nbsp架</h1>
+					</div>
+
+					<div style="height: 33px;width: 750px;"></div>
+
+					<div id="myshelf-toread">
+						<div style="width: 22px;height: 88px;/*background-color: brown;*/float: left;margin-left: 30px;margin-top: 140px;">
+						<p style="text-align: center;font-size: 22px;color: #3d3a2d;font-weight: bold;">积<br>&nbsp<br>读</p></div>
+
+						<div id="books-toread">
+
+							<div id="abook" style="left: 0px;background-image: url(images/2222.png);"></div>
+							<div id="abook" style="left: 100px;background-image: url(images/3333.png);"></div>
+							<div id="abook" style="left: 200px;background-image: url(images/4444.png);"></div>
+							<div id="abook" style="left: 300px;background-image: url(images/5555.png);"></div>
+							<div id="abook" style="left: 400px;background-image: url(images/6.png);"></div>
+							
+						</div>
+						<div id="books-toread">
+							<div id="abook" style="left: 0px;background-image: url(images/7.png);"></div>
+							<div id="abook" style="left: 100px;background-image: url(images/8.png);"></div>
+							<div id="abook" style="left: 200px;background-image: url(images/9.png);"></div>
+							<div id="abook" style="left: 300px;background-image: url(images/10.png);"></div>
+							<div id="abook" style="left: 400px;background-image: url(images/11.png);"></div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- 我的书柜*内容结束 -->
+			</div>
+		</div>
+
+<!-- 我的书柜：积读结束 -->
+
+
+
+
+
+
+
+<!-- 我的收藏 -->
+		<div class="section section-3">
+			<div style="height: 130px;width: 10px;"></div>
+
+			<div id="myhomebox" style="background-color: rgba(249,232,186,0.7);">
+
+				<!-- 我的收藏*内容 -->
+				<div id="mylikes-content">
+					<div id="mylikes-title">
+						<div style="width: 750px;height: 40px;"></div>
+						<h1 style="text-align: center;font-size: 22px;color: #3d3a2d;font-weight: bold;">我&nbsp的&nbsp收&nbsp藏</h1>
+					</div>
+
+					<div style="width: 660px;height: 5px;"></div>
+
+					<!-- 我的收藏一 -->
+
+					<div id="mylikes-box">
+						<div id="mylikes-people">
+							<img src="images/touxiangMylikes2.png">
+							<p style="font-weight: bold;font-size: 18px;text-align: center;">别那么熊&nbsp♂</p>
+						</div>
+						<div style="height: 35px;width: 450px;float: right;"></div>
+						<div id="mylikes-review">
+							<div style="height: 1px;width: 450px"></div>
+							<p style="font-size: 18px;letter-spacing: 0.7px;line-height: 23px;">在<span style="color: #469B6E">保罗·莫朗</span>的<span style="color: #469B6E">《旅行》</span>  写下：<br><br>
+
+								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp大家都是旅客；留守的人反而变得特立独行。所有的
+								人都在路上。旅行不再是心血来潮，而是受神秘的迁移规则
+								左右。人情巨变：世人不再难离故土，反而欣然踏上旅程。</p>
+						</div>
+					</div>
+					<!-- 我的收藏一结束 -->
+
+
+					<div style="width: 660px;height: 5px;"></div>
+
+					<!-- 我的收藏二 -->
+					
+					<div id="mylikes-box">
+						<div id="mylikes-people">
+							<img src="images/touxiangMylikes.png">
+							<p style="font-weight: bold;font-size: 18px;text-align: center;">小甜酒&nbsp♀</p>
+						</div>
+						<div style="height: 35px;width: 450px;float: right;"></div>
+						<div id="mylikes-review">
+							<div style="height: 1px;width: 450px"></div>
+							<p style="font-size: 18px;letter-spacing: 0.7px;line-height: 23px;">在<span style="color: #469B6E">山村暮鸟</span>的<span style="color: #469B6E">《云》</span>摘抄的：<br>
+
+								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp樱花 春天 你们都稍稍等一等 什么地方 还有人在哭呢？<br>
+								&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp活成一个真的人，面对真实的自然，生发真实的喜悦。这本是每一个人最基本最纯然的生活状态，但在这熙攘的人世，有多少人能做到这些呢。</p>
+							</div>
+					</div>
+					<!-- 我的收藏二结束 -->
+				</div>
+				<!-- 我的收藏*内容结束 -->
+
+
+				<!-- 我的收藏*图片 -->
+				<div id="mylikes-pic">
+					<img src="images/mylikes.png">
+				</div>
+				<!-- 我的收藏*图片结束 -->
+			</div>
+		</div>
+<!-- 我的收藏结束 -->
+
+
+
+
+
+
+
+
+
+
+<!-- 我的习惯 -->
+		<div class="section section-4">
+			<div style="height: 130px;width: 10px;"></div>
+			<div id="myhomebox" style="background-color: rgba(205,189,164,0.7);">
+				<!-- 我的习惯*内容 -->
+				<div id="myhabits-content">
+				<div id="myhabits-title">
+					<div style="width: 750px;height: 40px;"></div>
+					<h1 style="text-align: center;font-size: 22px;color: #3d3a2d;font-weight: bold;">我&nbsp的&nbsp习&nbsp惯</h1>
+				</div>
+				<div id="myhabits-text" style="text-align: center;line-height:2.2rem;font-size: 18px;">
+					你喜欢在<span style="color: #469B6E">清晨</span>读书<br>
+
+					<span style="color: #469B6E">随笔集 科幻小说 散文</span>最对你胃口<br>
+
+					本周阅读<span style="color: #cc0606">3天</span>，共计<span style="color: #cc0606">50分钟</span><br>
+
+					累计阅读<span style="color: #cc0606">95天</span>，共计<span style="color: #cc0606">128小时9分钟</span><br>
+
+					这些人与你有相同趣好：
+				</div>
+				<div id="myhabits-people">
+					<div id="apeople" style="left: 0px;background-image: url(images/touxiang4.png);" title="tql"></div>
+					<div id="apeople" style="left: 80px;background-image: url(images/touxiang3.png);"title="好好学习天天向上"></div>
+					<div id="apeople" style="left: 160px;background-image: url(images/touxiang2.png);"title="赵老师超可爱"></div>
+				</div>
+			</div>
+			<!-- 我的习惯*内容结束 -->
+
+
+			<!-- 我的习惯*图片 -->
+			<div id="myhabits-pic">
+				<img src="images/myhabits.png">
+			</div>
+			<!-- 我的习惯*图片结束 -->
+			</div>
+		</div>
+
+
+	</section>
+
+
+
+	<!-- 导航栏 -->
+
+
+	<div class="wrapper" style="position: absolute;top: 0px;left: 1px;width: 100%">
+		<!--Header Area Start-->
+		<header>
+		    <div class="header-container">
+		        <div class="header-area header-sticky pt-30 pb-30">
+                    <div class="container">
+                        <div class="row">
+                            <!--Header Logo Start-->
+                            <div class="col-lg-3 col-md-3">
+                                <div class="logo-area">
+                                    <a href="../index.html" >
+                                        <img src="../images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Header Logo End-->
+                            <!--Header Menu And Mini Cart Start-->
+                            <div class="col-lg-9 col-md-9 text-lg-right">
+                                <!--Main Menu Area Start-->
+                                <div class="header-menu">
+                                    <nav>
+                                        <ul class="main-menu">
+                                        	<li><a href="../trade/index.html" style="text-decoration: none;color: #3d3a2d">交易森林</a>
+                                                <!--Dropdown Menu Start-->
+                                                <ul class="dropdown">
+                                                    <li><a href="../trade/index.html">随便逛逛</a></li>
+                                                    <li><a href="../trade/single-product.html">最近发布</a></li>
+                                                    <li><a href="../trade/sale book.html">我要出书</a></li>
+                                                    <li><a href="../trade/shopping car.html">我的购物车</a></li>
+                                                   
+                                                </ul>
+                                                <!--Dropdown Menu End-->
+                                            </li>
+                                        	
+                                            <li><a href="index.html"style="text-decoration: none;color: #3d3a2d">自家庭院</a>
+                                                <!--Dropdown Menu Start-->
+                                                <ul class="dropdown">
+                                                    <li><a href="index.html">继续阅读</a></li>
+                                                    <li><a href="index.html">我的书架</a></li>
+                                                    <li><a href="index.html">我的收藏</a></li>
+                                                    <li><a href="index.html">我的习惯</a></li>
+                                               
+                                                </ul>
+                                                <!--Dropdown Menu End-->
+                                            </li>
+                                            
+                                           
+                                            <li><a href="../review/review.html"style="text-decoration: none;color: #3d3a2d">书评森林</a>
+                                            <ul class="dropdown">
+                                                    <li><a href="../review/review.html">写书评</a></li>
+                                                    <li><a href="../review/review.html">随机书评</a></li>
+                                                    
+                                               
+                                                </ul></li>
+                                       
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!--Main Menu Area End-->
+                                <!--Header Option Start--> 
+                                <div class="header-option">
+                                    <div class="mini-cart-search">
+                                        <div class="mini-cart">
+                                            <a href="../trade/shopping car.html">
+                                                <span class="cart-icon">
+                                                   <span class="cart-quantity">2</span>
+                                                </span>
+                                                <span class="cart-title" >购物车 <br><strong>9颗种子</strong></span> 
+                                            </a>
+                                        </div>
+                                        <div class="header-search">
+                                            <div class="search-box">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="currency">
+                                            <div class="currency-box">
+                                                <a href="../login/index.html"><i class="fa fa-th"></i></a>
+                                                <div class="currency-dropdown" style="">
+                                                    <ul class="menu-top-menu">
+                                                        <li><a href="../login/index.html">我的账号</a></li>
+                                                        <li><a href="../login/index.html">私信</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Header Option End--> 
+                            </div>
+                            <!--Header Menu And Mini Cart End-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12"> 
+                                <!--Mobile Menu Area Start-->
+                                <div class="mobile-menu d-lg-none"></div>
+                                <!--Mobile Menu Area End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+		    </div>
+		</header>
+		<!--Header Area End-->
+
+
+<!-- 导航点 -->
+	<ul class="section-btn">
+		<li class="on"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+<!-- 浮动树叶按钮 -->
+	<div class="arrow"></div>
+
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/wheel.min.js"></script>
+	<script type="text/javascript" src="js/wheel-core.js"></script>
+</body>
+</html>
